@@ -1,0 +1,63 @@
+:root {
+  --green: #5bc236;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  box-sizing: inherit;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  overflow: hidden;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.level {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--green);
+  width: 100%;
+  z-index: -1;
+}
+
+.wave {
+  position: absolute;
+  left: -140%;
+  width: 375%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--green);
+  border-radius: 40%;
+  animation: wave 17s linear -1s infinite;
+  z-index: -2;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.batteryPercentage {
+  font-size: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
